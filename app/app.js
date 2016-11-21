@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/shares'); 
+mongoose.connect('mongodb://mongo/shares'); 
 require('./models/Shares');
 
 var index = require('./routes/index');

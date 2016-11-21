@@ -50,8 +50,9 @@ router.get('/test',function(req, res, next){
 	
 	Shares.find(function(err,shares){
 		if(err) return console.error(err);
-			
-		res.render('../views/link', { shares: shares });
+		
+		var link = shares[0].link;		
+		res.render('../views/link', { link: link });
 		
 	});
 		

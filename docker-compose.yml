@@ -1,0 +1,10 @@
+version: '2'
+services: 
+ mongo:
+  build: ./mongo
+ fluff: 
+  build: ./app
+  links: 
+   - mongo
+  ports: 
+  - "9090:3000"
