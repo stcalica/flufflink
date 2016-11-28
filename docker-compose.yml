@@ -2,9 +2,13 @@ version: '2'
 services: 
  mongo:
   build: ./mongo
+  volumes: 
+   - /data/db/mongo
  fluff: 
   build: ./app
   links: 
    - mongo
+  volumes:
+   - ./:/app
   ports: 
   - "9090:3000"

@@ -2,11 +2,11 @@
 	
 	'use strict';
 	
-	var dependencies = []; 
+	var dependencies = ['ngRoute']; 
 
 	angular.module('fluff', dependencies).config(Config);
 
-	Config.$inject = ['$locationProvider'];
+	Config.$inject = [ '$locationProvider'];
 
 	function Config($locationProvider){
 		$locationProvider.hashPrefix('!');
