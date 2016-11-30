@@ -12,23 +12,21 @@ router.get('/', function(req, res, next) {
 
 //input details into system /share
 router.post('/share', function(req, res, next){
-	
+
 	//switch to be inputed as parameters of the request
-	//save share 
+	//save share
 	var share = new Shares({ title: req.body.title, link: req.body.link, description: req.body.description });
 
-	//save to database 
+	//save to database
 	share.save(function(err){
 		if(err){
 			console.log(err);
 		} else {
-			
 			console.log(share);
-			res.render('confirmation', { title: req.body.title });  
-
+			res.send(share);
 		}
-	});	
-	
+	});
+
 });
 
 //get data about fluff from id
@@ -41,32 +39,32 @@ router.get('/:id',function(req, res, next){
 
 //create link page
 router.get('/fluff/link/:id',function(req, res, next){
-		
+
 	Shares.find(function(err, shares){
-		if(err) return console.error(err); 
+		if(err) return console.error(err);
 
 		console.log(shares);
-		
+
 	});
-	
-	
+
+
 });
 
-//get fluff link data 
+//get fluff link data
 router.get('/fluff/data/:id',function(req, res, next){
-	var id = req.params.id; 
+	var id = req.params.id;
 	Shares.find(function(err,shares){
 		if(err) return console.error(err);
-		var link = shares[0].link;		
+		var link = shares[0].link;
 		res.render('../views/link', { link: link });
-		
+
 	});
-		
+
 });
 //generate share link/page /fluff/{id}
-	//router render page with metadata dynamically inserted 
+	//router render page with metadata dynamically inserted
 
 
 //check stats of fluff link /stats/{id}
-	//grab the proper fluff 
+	//grab the proper fluff
 module.exports = router;
