@@ -19,7 +19,7 @@
 			console.log('form-data', $scope.fluff);
 			$http({
 				method: 'POST',
-				url: 'http://127.0.0.1:9090/share',
+				url: 'http://fluff.link/share',
 				data: $scope.fluff,
 				headers: {'Content-type': 'application/x-www-form-urlenconded'}
 			}).success(function(data){
