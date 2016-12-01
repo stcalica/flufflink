@@ -2,7 +2,9 @@
 	<span><p> Add your link, description and the url location of the image you want to appear on social media. </p></span>
 	<form ng-submit="submitform()">
 	  <span>Link: <input type="text" ng-model="fluff.link"></span>
-          <span>Description: <input type="text" ng-model="fluff.desc"></span>
+    <span>Description: <input type="text" ng-model="fluff.desc"></span>
+		{{ fluff }}
 	  <button type="submit">SUBMIT</button>
+
 	</form>
 </div>

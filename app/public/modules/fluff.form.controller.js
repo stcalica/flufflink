@@ -14,8 +14,6 @@
 
 		$scope.fluff = {}; // form data in json object(?) to be posted to mongo database
 
-
-
 		$scope.submitform = function(){
 			$scope.fluff = angular.copy(fluff);
 			console.log('form-data', $scope.fluff);
