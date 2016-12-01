@@ -21,14 +21,14 @@ router.post('/share', function(req, res, next){
   console.log('request body', req.body);
   console.log('to be added', share);
 	//save to database
-	share.save(function(err){
+	share.save(function(err, share){
 		if(err){
 			console.log(err);
 		} else {
-			console.log('added' , share);
+			console.log('the object was saved' , share);
       var id  = share._id;
       res.send(id);
-		}
+  		}
 	});
 });
 

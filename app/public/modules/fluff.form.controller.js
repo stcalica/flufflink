@@ -20,9 +20,7 @@
 			fluff.link = form.link;
 			fluff.description = form.desc;
 
-
 			console.log('form-data', fluff);
-
 
 			$http.post('http://fluff.link/share',
              {
