@@ -26,27 +26,22 @@ router.post('/share', function(req, res, next){
       res.send(id);
 		}
 	});
-
 });
 
 
 
 //create link page
 router.get('/fluff/link/:id',function(req, res, next){
-
   var id  = req.params.id;
   Shares.findById(id, function(err, share){
       if(err){
         console.log("couldn't find ID");
         console.log('error', err);
       } else {
-
           console.log('found', share);
-          res.render('fluff');
+          res.render('fluff', { share: share });
       }
   });
-
-
 });
 
 
