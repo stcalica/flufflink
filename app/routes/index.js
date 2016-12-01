@@ -21,7 +21,7 @@ router.post('/share', function(req, res, next){
 	//switch to be inputed as parameters of the request
 	//save share
 	//var share = new Shares({ title: req.body.title, link: req.body.link, description: req.body.description });
-  var share = new Shares({ req.data.link, req.data.description });
+//  var share = new Shares({ req.data.link, req.data.description });
   console.log('request body', req.data);
   console.log('to be added', share);
 	//save to database
