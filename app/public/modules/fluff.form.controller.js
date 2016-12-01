@@ -25,13 +25,15 @@
 			}).success(function(data){
 
 				if(data.errors){
-
+					console.log($data.errors.name);
 					//show errors  -  part of the response in the REST API have to make this portion up myself
 					$scope.errorName = $data.errors.name;
 
 				} else {
-					console.log('returned share', data);
-					$scope.message = data.message;
+					console.log('returned share id', data);
+					var fluff = 'fluff/link/'+ data;
+					$window.location.href = fluff;
+
 
 				}
 
