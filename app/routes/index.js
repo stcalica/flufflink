@@ -28,8 +28,6 @@ router.post('/share', function(req, res, next){
 	});
 });
 
-
-
 //create link page
 router.get('/fluff/link/:id',function(req, res, next){
   var id  = req.params.id;
@@ -38,8 +36,9 @@ router.get('/fluff/link/:id',function(req, res, next){
         console.log("couldn't find ID");
         console.log('error', err);
       } else {
-          console.log('found', share);
-          res.render('fluff', { share: share });
+          var fluff = share.exec();
+          console.log('found', fluff);
+          res.render('fluff', { share: fluff });
       }
   });
 });
