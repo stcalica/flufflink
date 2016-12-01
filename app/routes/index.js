@@ -16,12 +16,13 @@ router.post('/share', function(req, res, next){
 	//switch to be inputed as parameters of the request
 	//save share
 	var share = new Shares({ title: req.body.title, link: req.body.link, description: req.body.description });
+  console.log('to be added', share);
 	//save to database
 	share.save(function(err){
 		if(err){
 			console.log(err);
 		} else {
-			console.log(share);
+			console.log('added' , share);
       var id  = share._id;
       res.send(id);
 		}

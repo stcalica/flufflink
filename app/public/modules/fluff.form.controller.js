@@ -23,9 +23,10 @@
 				data: $scope.fluff,
 				headers: {'Content-type': 'application/x-www-form-urlenconded'}
 			}).success(function(data){
-
+				console.log('Call to API was successful');
 				if(data.errors){
-					console.log($data.errors.name);
+					console.log('Data Errors');
+					console.log('error:', $data.errors.name);
 					//show errors  -  part of the response in the REST API have to make this portion up myself
 					$scope.errorName = $data.errors.name;
 
@@ -33,8 +34,6 @@
 					console.log('returned share id', data);
 					var fluff = 'fluff/link/'+ data;
 					$window.location.href = fluff;
-
-
 				}
 
 			});
