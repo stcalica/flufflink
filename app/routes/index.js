@@ -24,7 +24,8 @@ router.post('/share', function(req, res, next){
 			console.log(share);
       var id  = share._id;
       var fluffed = 'fluff/link/'+id;
-      res.redirect(fluffed);
+
+      res.send({redirect: fluffed});
 		}
 	});
 
