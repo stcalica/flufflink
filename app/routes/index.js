@@ -13,15 +13,14 @@ router.get('/', function(req, res, next) {
 //input details into system /share
 router.post('/share', function(req, res, next){
   console.log('Post Request Made', req);
-  console.log(req.body);
   //console.log(req.data.link);
   //console.log(req.data.description);
 
 	//switch to be inputed as parameters of the request
 	//save share
-	//var share = new Shares({ title: req.body.title, link: req.body.link, description: req.body.description });
+	var share = new Shares({ link: req.body.link, description: req.body.description });
 //  var share = new Shares({ req.data.link, req.data.description });
-  console.log('request body', req.data);
+  console.log('request body', req.body);
   console.log('to be added', share);
 	//save to database
 	share.save(function(err){
