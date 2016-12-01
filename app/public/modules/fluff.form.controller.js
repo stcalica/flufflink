@@ -25,8 +25,8 @@
 			$http({
 				method: 'POST',
 				url: 'http://fluff.link/share',
-				data: fluff,
-				headers: {'Content-type': 'application/x-www-form-urlenconded'}
+				data: { 'data': fluff},
+				headers: {'Content-type': 'application/json'}
 			}).success(function(data){
 				console.log('Call to API was successful');
 				if(data.errors){
