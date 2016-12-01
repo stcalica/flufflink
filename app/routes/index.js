@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 //input details into system /share
 router.post('/share', function(req, res, next){
-  console.log('Post Request Made');
+  console.log('Post Request Made', req);
 	//switch to be inputed as parameters of the request
 	//save share
 	//var share = new Shares({ title: req.body.title, link: req.body.link, description: req.body.description });
