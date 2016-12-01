@@ -30,6 +30,7 @@ router.post('/share', function(req, res, next){
 
 //create link page
 router.get('/fluff/link/:id',function(req, res, next){
+  console.log('This is the link page');
   var id  = req.params.id;
   Shares.findById(id, 'title link description', function(err, share){
       if(err){
