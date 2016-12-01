@@ -45,15 +45,6 @@ router.get('/fluff/link/:id',function(req, res, next){
             res.render('fluff', { share: share.link });
         }
   });
-  // Shares.findById(id, 'title link description', function(err, share){
-  //     if(err){
-  //       console.log("couldn't find ID");
-  //       console.log('error', err);
-  //     } else {
-  //         console.log('found', share);
-  //         res.render('fluff', { share: share });
-  //     }
-  // });
 });
 
 
