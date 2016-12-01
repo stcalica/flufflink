@@ -16,12 +16,12 @@
 
 		$scope.submitform = function(){
 			console.log('in submitform', form);
-			var fluff = {}; 
+			var fluff = {};
 			fluff.link = form.link;
-			fluff.link = form.desc;
+			fluff.description = form.desc;
 
 
-			console.log('form-data', $scope.fluff);
+			console.log('form-data', fluff);
 			$http({
 				method: 'POST',
 				url: 'http://fluff.link/share',
