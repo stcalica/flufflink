@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
 var SharesSchema = new mongoose.Schema({
-	title: {type: String},
-	link: {type: String},
-	description: {type: String},
+	title: String,
+	link: String,
+	description: String,
 	clicks: {type:Number, default: 0}
 });
 
