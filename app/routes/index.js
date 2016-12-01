@@ -13,9 +13,8 @@ router.get('/', function(req, res, next) {
 //input details into system /share
 router.post('/share', function(req, res, next){
   console.log('Post Request Made');
-  console.log(req);
-  console.log(req.data);
-  console.log(req.body.data);
+  console.log(req.params);
+
   //console.log(req.data.fluff);
   //console.log(req.data.link);
   //console.log(req.data.description);
