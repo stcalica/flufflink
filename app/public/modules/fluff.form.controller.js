@@ -12,20 +12,20 @@
 		var form = this;
 		console.log('out submitform', form);
 
-		$scope.fluff = {}; // form data in json object(?) to be posted to mongo database
+		//$scope.fluff = {}; // form data in json object(?) to be posted to mongo database
 
 		$scope.submitform = function(){
 			console.log('in submitform', form);
-
-			$scope.fluff.link = form.link;
-			$scope.fluff.link = form.description;
+			var fluff = {}; 
+			fluff.link = form.link;
+			fluff.link = form.desc;
 
 
 			console.log('form-data', $scope.fluff);
 			$http({
 				method: 'POST',
 				url: 'http://fluff.link/share',
-				data: $scope.fluff,
+				data: fluff,
 				headers: {'Content-type': 'application/x-www-form-urlenconded'}
 			}).success(function(data){
 				console.log('Call to API was successful');
