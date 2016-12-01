@@ -12,9 +12,7 @@ router.get('/', function(req, res, next) {
 
 //input details into system /share
 router.post('/share', function(req, res, next){
-  console.log('Post Request Made', req);
-  //console.log(req.data.link);
-  //console.log(req.data.description);
+  //console.log('Post Request Made', req);
 
 	//switch to be inputed as parameters of the request
 	//save share
@@ -36,15 +34,15 @@ router.post('/share', function(req, res, next){
 
 //create link page
 router.get('/fluff/link/:id',function(req, res, next){
-  console.log('This is the link page');
   var id  = req.params.id;
+  console.log('This is the link page with id: ', id);
   Shares.find({ id: id}, function(err, share){
     if(err){
           console.log("couldn't find ID");
           console.log('error', err);
         } else {
             console.log('found', share);
-            res.render('fluff', { share: share });
+            res.render('fluff', { share: share.link });
         }
   });
   // Shares.findById(id, 'title link description', function(err, share){
