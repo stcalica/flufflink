@@ -12,11 +12,10 @@ router.get('/', function(req, res, next) {
 
 //input details into system /share
 router.post('/share', function(req, res, next){
-
+  console.log('Post Request Made');
 	//switch to be inputed as parameters of the request
 	//save share
 	var share = new Shares({ title: req.body.title, link: req.body.link, description: req.body.description });
-
 	//save to database
 	share.save(function(err){
 		if(err){
@@ -26,21 +25,11 @@ router.post('/share', function(req, res, next){
       var id  = share._id;
       var fluffed = 'fluff/link/'+id;
       res.redirect(fluffed);
-
 		}
 	});
 
 });
 
-//get data about fluff from id
-router.get('/:id',function(req, res, next){
-  Shares.find(function(err, shares){
-		if(err) return console.error(err);
-		console.log(shares);
-	});
-
-
-});
 
 
 //create link page
@@ -54,25 +43,14 @@ router.get('/fluff/link/:id',function(req, res, next){
       } else {
 
           console.log('found', share);
-          res.render('fluff', {  });
-
+          res.render('fluff');
       }
   });
 
 
 });
 
-//get fluff link data
-router.get('/fluff/data/:id',function(req, res, next){
-	var id = req.params.id;
-	Shares.find(function(err,shares){
-		if(err) return console.error(err);
-		var link = shares[0].link;
-		res.render('../views/link', { link: link });
 
-	});
-
-});
 //generate share link/page /fluff/{id}
 	//router render page with metadata dynamically inserted
 
