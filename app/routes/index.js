@@ -33,7 +33,7 @@ router.post('/share', function(req, res, next){
 //create link page
 router.get('/fluff/link/:id',function(req, res, next){
   var id  = req.params.id;
-  Shares.findById(id, function(err, share){
+  Shares.findById(id, 'title link description', function(err, share){
       if(err){
         console.log("couldn't find ID");
         console.log('error', err);
