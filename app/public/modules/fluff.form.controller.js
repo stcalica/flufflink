@@ -9,13 +9,10 @@
 
 
 	function FormController( $scope, $rootScope, $routeParams, $window, $http){
-
-		console.log('Inside Form Controller');
-
 		$scope.fluff = {}; // form data in json object(?) to be posted to mongo database
 
 		$scope.submitform = function(){
-			$scope.fluff = $.param($scope.fluff);
+			$scope.apply;
 			console.log('form-data', $scope.fluff);
 			$http({
 				method: 'POST',
