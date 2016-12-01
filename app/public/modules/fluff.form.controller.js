@@ -9,10 +9,18 @@
 
 
 	function FormController( $scope, $rootScope, $routeParams, $window, $http){
+		var form = this;
+		console.log('out submitform', form);
+
 		$scope.fluff = {}; // form data in json object(?) to be posted to mongo database
+
 		$scope.submitform = function(){
-			$scope.fluff.link = this.link;
-			$scope.fluff.link = this.description;
+			console.log('in submitform', form);
+
+			$scope.fluff.link = form.link;
+			$scope.fluff.link = form.description;
+
+
 			console.log('form-data', $scope.fluff);
 			$http({
 				method: 'POST',
