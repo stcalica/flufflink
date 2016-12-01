@@ -23,7 +23,10 @@ router.post('/share', function(req, res, next){
 			console.log(err);
 		} else {
 			console.log(share);
-			res.send(share);
+      var id  = share._id;
+      var fluffed = 'fluff/link/'+id;
+      res.redirect(fluffed);
+
 		}
 	});
 
@@ -31,7 +34,10 @@ router.post('/share', function(req, res, next){
 
 //get data about fluff from id
 router.get('/:id',function(req, res, next){
-
+  Shares.find(function(err, shares){
+		if(err) return console.error(err);
+		console.log(shares);
+	});
 
 
 });
@@ -40,12 +46,18 @@ router.get('/:id',function(req, res, next){
 //create link page
 router.get('/fluff/link/:id',function(req, res, next){
 
-	Shares.find(function(err, shares){
-		if(err) return console.error(err);
+  var id  = req.params.id;
+  Shares.findById(id, function(err, share){
+      if(err){
+        console.log("couldn't find ID");
+        console.log('error', err);
+      } else {
 
-		console.log(shares);
+          console.log('found', share);
+          res.render('fluff', {  });
 
-	});
+      }
+  });
 
 
 });
