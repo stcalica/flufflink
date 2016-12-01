@@ -32,15 +32,24 @@ router.post('/share', function(req, res, next){
 router.get('/fluff/link/:id',function(req, res, next){
   console.log('This is the link page');
   var id  = req.params.id;
-  Shares.findById(id, 'title link description', function(err, share){
-      if(err){
-        console.log("couldn't find ID");
-        console.log('error', err);
-      } else {
-          console.log('found', share);
-          res.render('fluff', { share: share });
-      }
+  Shares.find({ id: id}, function(err, share){
+    if(err){
+          console.log("couldn't find ID");
+          console.log('error', err);
+        } else {
+            console.log('found', share);
+            res.render('fluff', { share: share });
+        }
   });
+  // Shares.findById(id, 'title link description', function(err, share){
+  //     if(err){
+  //       console.log("couldn't find ID");
+  //       console.log('error', err);
+  //     } else {
+  //         console.log('found', share);
+  //         res.render('fluff', { share: share });
+  //     }
+  // });
 });
 
 
