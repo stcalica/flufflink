@@ -1,13 +1,13 @@
 <html>
 	<head>
-		<meta property="og:url" content="test" />
+		<meta property="og:url" content="<%= link %>" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="title" />
+		<meta property="og:title" content="<%= title %>" />
 
 	</head>
 	<body>
-		<h1> <%= share.id %> </h1>
-		<p> <%= share.description %> </p>
+		<h2> <%= title %> </h2>
+		<p> <%= description %> </p>
 	</body>
 	<script>
 		console.log('share', <%= share.link %>);

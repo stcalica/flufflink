@@ -17,12 +17,13 @@
 		$scope.submitform = function(){
 			console.log('in submitform', form);
 			var fluff = {};
-			//fluff.title = form.title;
+			fluff.title = form.title;
 			fluff.link = form.link;
 			fluff.description = form.desc;
 
 			$http.post('http://fluff.link/share',
              {
+							 	title: fluff.title,
                  link: fluff.link,
                  description: fluff.description
              }).success(function(data){
