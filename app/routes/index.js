@@ -16,6 +16,7 @@ router.post('/share', function(req, res, next){
 
 	//switch to be inputed as parameters of the request
 	//save share
+  //title: req.body.title
 	var share = new Shares({ link: req.body.link, description: req.body.description });
 //  var share = new Shares({ req.data.link, req.data.description });
   console.log('request body', req.body);
@@ -36,7 +37,7 @@ router.post('/share', function(req, res, next){
 router.get('/fluff/link/:id',function(req, res, next){
   var id  = req.params.id;
   console.log('This is the link page with id: ', id);
-  Shares.find({ id: id}, function(err, share){
+  Shares.findById(id.toString(), function(err, share){
     if(err){
           console.log("couldn't find ID");
           console.log('error', err);
