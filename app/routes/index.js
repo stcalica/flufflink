@@ -41,8 +41,9 @@ router.get('/fluff/link/:id',function(req, res, next){
           console.log("couldn't find ID");
           console.log('error', err);
         } else {
+            var flufflink = '/fluff/link/:id' + id.toString();
             console.log('found', share);
-            res.render('fluff', { title: share.title, link: share.link, description: share.description });
+            res.render('fluff', { title: share.title, link: share.link, description: share.description, flufflink: flufflink });
         }
   });
 });
