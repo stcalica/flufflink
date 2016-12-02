@@ -17,7 +17,7 @@ router.post('/share', function(req, res, next){
 	//switch to be inputed as parameters of the request
 	//save share
   //title: req.body.title
-	var share = new Shares({ title: req.body.title, link: req.body.link, description: req.body.description });
+	var share = new Shares({ title: req.body.title, author: req.body.author, link: req.body.link, description: req.body.description });
 //  var share = new Shares({ req.data.link, req.data.description });
   console.log('to be added', share);
 	//save to database
@@ -43,7 +43,7 @@ router.get('/fluff/link/:id',function(req, res, next){
         } else {
             var flufflink = '/fluff/link/:id' + id.toString();
             console.log('found', share);
-            res.render('fluff', { title: share.title, link: share.link, description: share.description, flufflink: flufflink });
+            res.render('fluff', { title: share.title, link: share.link, description: share.description, author: share.author, flufflink: flufflink });
         }
   });
 });

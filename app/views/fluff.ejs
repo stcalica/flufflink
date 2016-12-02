@@ -9,13 +9,10 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="<%= flufflink %>" />
 		<meta property="og:title" content="<%= title %>" />
+		<meta name="author" content="<%= author %>">
 		<meta property="og:description"  content="<%= description %>" />
 		<meta property="og:type" content="article" />
-		<meta property="og:site_name" content="CodeIsDead" />
-
-
-		<meta name="author" content="Fluff.link">
-
+		<!--		<meta property="og:site_name" content="CodeIsDead" /> -->
 		<!--		<meta property="og:image" content="<%= %>" /> -->
 	</head>
 	<body>
@@ -24,7 +21,7 @@
 	</body>
 	<script>
 		var redirect  =  '<%= link %>';
-		console.log('share', redirect);
-		//window.location.redirect('2',redirect)
+		console.log('redirecting to: ', redirect);
+		window.location.href(redirect);
 	</script>
 </html>
