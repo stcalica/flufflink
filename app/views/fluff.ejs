@@ -1,11 +1,15 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="<%= description %>">
+		<meta name="keywords" content="metadata">
+		<meta name="author" content="Fluff.link">
+		<title><%= title %></title>
 		<meta property="og:url" content="<%= link %>" />
 		<meta property="og:title" content="<%= title %>" />
-		<meta property="og:description"        content="<%= description %>" />
+		<meta property="og:description"  content="<%= description %>" />
 		<meta property="og:type" content="article" />
-		<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
-
+		<!--		<meta property="og:image" content="<%= %>" /> -->
 
 	</head>
 	<body>
@@ -13,7 +17,8 @@
 		<p> <%= description %> </p>
 	</body>
 	<script>
-		var link  =  '<%= link %>';
-		console.log('share', link);
+		var redirect  =  '<%= link %>';
+		console.log('share', redirect);
+
 	</script>
 </html>
