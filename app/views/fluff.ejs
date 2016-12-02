@@ -3,14 +3,16 @@
 		<meta charset="UTF-8">
 		<meta name="description" content="<%= description %>">
 		<meta name="keywords" content="metadata">
-		<meta name="author" content="Fluff.link">
 		<title><%= title %></title>
 		<meta property="og:url" content="<%= link %>" />
 		<meta property="og:title" content="<%= title %>" />
 		<meta property="og:description"  content="<%= description %>" />
 		<meta property="og:type" content="article" />
-		<!--		<meta property="og:image" content="<%= %>" /> -->
+		<meta property="og:site_name" content="CodeIsDead" />
 
+		<meta name="author" content="Fluff.link">
+
+		<!--		<meta property="og:image" content="<%= %>" /> -->
 	</head>
 	<body>
 		<h2> <%= title %> </h2>
@@ -19,6 +21,6 @@
 	<script>
 		var redirect  =  '<%= link %>';
 		console.log('share', redirect);
-
+		//window.location.redirect('2',redirect)
 	</script>
 </html>
