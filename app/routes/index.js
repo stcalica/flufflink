@@ -43,7 +43,7 @@ router.get('/fluff/link/:id',function(req, res, next){
           console.log('error', err);
         } else {
             console.log('found', share);
-            res.render('fluff', { link: share.link, description: share.description });
+            res.render('fluff', { title: share.title, link: share.link, description: share.description });
         }
   });
 });
