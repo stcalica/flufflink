@@ -60,7 +60,8 @@ router.get('/fluff/link/:id',function(req, res, next){
                                   description: share.description,
                                   image: share.image,
                                   flufflink: flufflink,
-                                  fbAgent: fbAgent
+                                  fbAgent: fbAgent,
+                                  userAgent: req.headers['user-agent']
                                 });
         }
   });
