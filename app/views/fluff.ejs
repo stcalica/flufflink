@@ -22,7 +22,7 @@
 	</body>
 	<script>
 
-		var crawler = false;
+		//var crawler = false;
 
 		var fb_user_agent1 = 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)';
 		var fb_user_agent2 = 'facebookexternalhit/1.1';
@@ -33,7 +33,10 @@
 		console.log('redirecting to: ', redirect);
 
 		if( (fbAgent != fb_user_agent1) || (fbAgent != fb_user_agent2) ){
+			console.log('not a crawler');
 			window.location = redirect;
+		} else {
+			console.log('is a crawler');
 		}
 
 
