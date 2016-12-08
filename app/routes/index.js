@@ -39,7 +39,9 @@ router.get('/fluff/link/:id',function(req, res, next){
   //check if facebook crawler or not
   var crawler = false;
 
-  console.log('request', req);
+  console.log('user-agent', req.headers['user-agent']);
+  console.log('user-agent', req.headers);
+
 
   Shares.findById(id.toString(), function(err, share){
     if(err){
