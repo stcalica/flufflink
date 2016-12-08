@@ -21,7 +21,10 @@
 	</body>
 	<script>
 		var redirect  =  '<%= link %>';
+		var redirect  =  '<%= fbAgent %>';
 		console.log('redirecting to: ', redirect);
-		//window.location = redirect;
+		if(fbAgent){
+			window.location = redirect;
+		}
 	</script>
 </html>
