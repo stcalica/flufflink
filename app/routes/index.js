@@ -39,6 +39,8 @@ router.get('/fluff/link/:id',function(req, res, next){
   //check if facebook crawler or not
   var crawler = false;
 
+  console.log(req);
+
   Shares.findById(id.toString(), function(err, share){
     if(err){
           console.log("couldn't find ID");
@@ -51,7 +53,6 @@ router.get('/fluff/link/:id',function(req, res, next){
                                   link: share.link,
                                   description: share.description,
                                   image: share.image,
-                                //  type: share.type,
                                   flufflink: flufflink
                                 });
         }
