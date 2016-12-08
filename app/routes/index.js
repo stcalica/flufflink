@@ -37,15 +37,10 @@ router.get('/fluff/link/:id',function(req, res, next){
   var id  = req.params.id;
   console.log('This is the link page with id: ', id);
   //check if facebook crawler or not
-  var crawler = false;
-  var fb_user_agent1 = 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)';
-  var fb_user_agent2 = 'facebookexternalhit/1.1';
-  var fbAgent = false;
+
   //console.log('user-agent', req.headers['user-agent']);
   //console.log('user-agent', req.headers);
-  if((req.headers['user-agent'] == fb_user_agent1) || (req.headers['user-agent'] == fb_user_agent2)){
-    fbAgent = true;
-  }
+
 
   Shares.findById(id.toString(), function(err, share){
     if(err){
@@ -60,7 +55,6 @@ router.get('/fluff/link/:id',function(req, res, next){
                                   description: share.description,
                                   image: share.image,
                                   flufflink: flufflink,
-                                  fbAgent: fbAgent,
                                   userAgent: req.headers['user-agent']
                                 });
         }

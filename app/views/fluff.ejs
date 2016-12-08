@@ -19,19 +19,23 @@
 		<h2> <%= title %> </h2>
 		<p> <%= description %> </p>
 
-		<p><%= userAgent %></p>
 	</body>
 	<script>
 
+		var crawler = false;
+
+		var fb_user_agent1 = 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)';
+		var fb_user_agent2 = 'facebookexternalhit/1.1';
+
 		var redirect  =  '<%= link %>';
-		var fbAgent  =  '<%= fbAgent %>';
-		var fb = false;
+		var fbAgent  =  '<%= userAgent %>';
+
 		console.log('redirecting to: ', redirect);
-		if(fbAgent == 'true'){
-				fb = true;
-		}
-		if( !fb ){
+
+		if( (fbAgent != fb_user_agent1) || (fbAgent != fb_user_agent2) ){
 			window.location = redirect;
 		}
+
+
 	</script>
 </html>
