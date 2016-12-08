@@ -21,13 +21,16 @@
 			fluff.link = form.link;
 			fluff.description = form.desc;
 			fluff.author = form.author;
+			fluff.image = form.image;
+
 
 			$http.post('http://fluff.link/share',
              {
 							 	title: fluff.title,
                  link: fluff.link,
                  description: fluff.description,
-								 author: fluff.author
+								 author: fluff.author,
+								 image: fluff.image
              }).success(function(data){
 							 	console.log('Call to API was successful');
 								if(data.errors){

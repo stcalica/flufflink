@@ -17,7 +17,7 @@ router.post('/share', function(req, res, next){
 	//switch to be inputed as parameters of the request
 	//save share
   //title: req.body.title
-	var share = new Shares({ title: req.body.title, author: req.body.author, link: req.body.link, description: req.body.description });
+	var share = new Shares({ title: req.body.title, author: req.body.author, image: req.body.image, link: req.body.link, description: req.body.description });
 //  var share = new Shares({ req.data.link, req.data.description });
   console.log('to be added', share);
 	//save to database
@@ -36,6 +36,9 @@ router.post('/share', function(req, res, next){
 router.get('/fluff/link/:id',function(req, res, next){
   var id  = req.params.id;
   console.log('This is the link page with id: ', id);
+  //check if facebook crawler or not
+  var crawler = false;
+
   Shares.findById(id.toString(), function(err, share){
     if(err){
           console.log("couldn't find ID");
@@ -43,7 +46,14 @@ router.get('/fluff/link/:id',function(req, res, next){
         } else {
             var flufflink = 'https://fluff.link/fluff/link/' + id.toString();
             console.log('found', share);
-            res.render('fluff', { title: share.title, link: share.link, description: share.description, author: share.author, flufflink: flufflink });
+            res.render('fluff', { title: share.title,
+                                  author: share.author,
+                                  link: share.link,
+                                  description: share.description,
+                                  image: share.image,
+                                //  type: share.type,
+                                  flufflink: flufflink
+                                });
         }
   });
 });
