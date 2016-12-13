@@ -1,29 +1,35 @@
-<div>
-	<span><p>This web app helps users rich share. What is rich sharing? Rich sharing is when your post include an image and description and title in the links. Think facebook previews. </p></span>
-	<span><p> Rich sharing is easy when you run your own site but some people who lease a website where they don't control the code or backend or people who have blogs on single page applications much have difficulty posting the content they want.
-	This application helps you edit your post to be shared exactly the way you like.</p></span>
-	<span><p> Add your link, description and the url location of the image you want to appear on social media. </p></span>
-	<span><ul> How it works </ol>
-							<li> Fill in the form with the image you want to show, description, and title on social media </li>
-							<li> Fill in the form with the link you want users to go to</li>
-							<li> This will create the fluff link and redirect you to your site </li>
-							<li> Rich share your link  </li>
-				</ul>
+<div class="container">
+	<div class="row">
+			<h1>Fluff Link</h1>
+			<span><p>This web app helps users rich share. What is rich sharing? Rich sharing is when your post include an image and description and title in the links. Think facebook previews. </p></span>
+			<span><p> Rich sharing is easy when you run your own site but some people who lease a website where they don't control the code or backend or people who have blogs on single page applications much have difficulty posting the content they want.
+			This application helps you edit your post to be shared exactly the way you like.</p></span>
+			<span><p> Add your link, description and the url location of the image you want to appear on social media. </p></span>
+			<span><ul> How it works </ol>
+									<li> Fill in the description, author, and  title you want to show on social media </li>
+									<li> Fill in the image url you want users to see, and the link url where it should go</li>
+									<li> An alert with your id will show, be sure to copy that link and post it </li>
+									<li> This will create the fluff link and redirect you to your site </li>
+									<li> Your link is now rich shared </li>
+						</ul>
 
-				<p> Soon we will have data analysis to look up how well your link was shared. </p>
-	</span>
+						<p> Soon we will have data analysis to look up how well your link was shared. </p>
+			</span>
+	</div>
 
 
-
-
-	<form name="fluffForm" ng-submit="submitform()">
-	  <span>Title: <input type="text" name="title" ng-model="form.title"></span></br >
-		<span>Author: <input type="text" name="author" ng-model="form.author"></span></br >
-    <span>Description: <input type="text" name="description" ng-model="form.desc"></span></br >
-		<span>Link: <input type="text" name="link" ng-model="form.link"></span></br >
-		<span>Image: <input type="text" name="image" ng-model="form.image"></span>
-
-	  <button type="submit">submit</button>
-
+<div class="row">
+	<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<form name="fluffForm" ng-submit="submitform()">
+			  <span><label label-for="title" class="form-label">Title:</label><input type="text" class="form-control" id="title"  name="title" ng-model="form.title"></span></br >
+				<span><label label-for="author" class="form-label">Author:</label><input type="text" class="form-control" id="author" name="author" ng-model="form.author"></span></br >
+		    <span><label label-for="description" class="form-label">Description:</label><textarea rows="5" id="description" class="form-control" name="description" ng-model="form.desc"></textarea></span></br >
+				<span><label label-for="link"  class="form-label">Link:</label><input type="text"  class="form-control" name="link" id="link" ng-model="form.link"></span></br >
+				<span><label label-for="image"  class="form-label">Image:</label><input type="text"  class="form-control" name="image" id="image" ng-model="form.image"></span>
+			  <button type="submit" class="btn btn-default">submit</button>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
 	</form>
 </div>
