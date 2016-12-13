@@ -39,6 +39,7 @@
 								} else {
 									console.log('returned share id', data);
 									var fluff = 'fluff/link/'+ data;
+									alert(fluff);
 									$window.location.href = fluff;
 								}
 			});
