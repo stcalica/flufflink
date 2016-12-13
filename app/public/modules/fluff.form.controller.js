@@ -39,7 +39,7 @@
 								} else {
 									console.log('returned share id', data);
 									var fluff = 'fluff/link/'+ data;
-									alert(fluff);
+									alert('http://fluff.link/#!/' + fluff);
 									$window.location.href = fluff;
 								}
 			});
