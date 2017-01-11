@@ -40,7 +40,8 @@
 									console.log('returned share id', data);
 									var fluff = 'fluff/link/'+ data;
 									alert('http://fluff.link/' + fluff);
-									$window.location.href = fluff;
+									var link = 'link/' + data;
+									$window.location.href = link;
 								}
 			});
 

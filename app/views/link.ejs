@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="title" content="<%= title %>" >
+		<meta name="description" content="<%= description %>" />
+		<meta name="keywords" content="metadata">
+		<title><%= title %></title>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="<%= flufflink %>" />
+		<meta property="og:title" content="<%= title %>" />
+		<meta name="author" content="<%= author %>">
+		<meta property="og:description"  content="<%= description %>" />
+		<meta property="og:type" content="article" />
+	  <meta property="og:site_name" content="CodeIsDead" />
+		<meta property="og:image" content="<%= image %>" />
+
+		<meta property="twitter:site" content="<%= flufflink %>" />
+		<meta property="twitter:title" content="<%= title %>" />
+		<meta property="twitter:creator" content="<%= author %>">
+		<meta property="twitter:description"  content="<%= description %>" />
+		<meta property="twitter:image" content="<%= image %>" />
+		<meta property="twitter:image:alt" content="<%= image %>" />
+
+
+
+
+	</head>
+	<body>
+		<span><h3>Share this link:</h3><a href="<%= flufflink %>"><%= flufflink %></a></span>
+
+		<h1> <%= title %> </h1>
+		<h2> <%= author %> </h2>
+		<p> <%= description %> </p>
+		<p> <%= link  %> </p>
+
+		<img src="<%= image %>" />
+
+
+	</body>
+</html>

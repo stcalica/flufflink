@@ -41,7 +41,6 @@ router.get('/fluff/link/:id',function(req, res, next){
   //console.log('user-agent', req.headers['user-agent']);
   //console.log('user-agent', req.headers);
 
-
   Shares.findById(id.toString(), function(err, share){
     if(err){
           console.log("couldn't find ID");
@@ -60,6 +59,26 @@ router.get('/fluff/link/:id',function(req, res, next){
         }
   });
 });
+
+router.get('/link/:id'),function(req, res, next){
+    var id  = req.params.id;
+    console.log('This is the link page with id: ', id);
+    Shares.findById(id.toString(), function(err, share){
+    var flufflink = 'https://fluff.link/fluff/link/' + id.toString();
+    console.log('found', share);
+    res.render('link', { title: share.title,
+                          author: share.author,
+                          link: share.link,
+                          description: share.description,
+                          image: share.image,
+                          flufflink: flufflink,
+                          userAgent: req.headers['user-agent']
+                        });
+    });
+
+
+
+}
 
 
 //generate share link/page /fluff/{id}
