@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Shares = mongoose.model('Shares');
+var shortId = require('shortid');
 
 
 /* GET home page. */
@@ -60,7 +61,7 @@ router.get('/fluff/link/:id',function(req, res, next){
   });
 });
 
-router.get('/link/:id'),function(req, res, next){
+router.get('/link/:id',function(req, res, next){
     var id  = req.params.id;
     console.log('This is the link page with id: ', id);
     Shares.findById(id.toString(), function(err, share){
@@ -78,7 +79,7 @@ router.get('/link/:id'),function(req, res, next){
 
 
 
-}
+});
 
 
 //generate share link/page /fluff/{id}
